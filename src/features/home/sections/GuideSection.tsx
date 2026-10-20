@@ -1,5 +1,6 @@
 import { SectionWrapper } from "../components/SectionWrapper";
 import { SECTIONS } from "@/constants/sections";
+import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export function GuideSection() {
   return (
@@ -8,7 +9,7 @@ export function GuideSection() {
       baseBg="bg-[#bbbbbb]"
       className="bg-[#8e597c]"
     >
-      <h1>Guide Section</h1>
+      <SectionTitle sectionId={SECTIONS.GUIDE} />
     </SectionWrapper>
   );
 }

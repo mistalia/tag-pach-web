@@ -26,7 +26,7 @@ export function SectionWrapper({
 
       {/* 【Layer 1】16:9 アスペクト比固定キャンバス */}
       <div
-        className={`responsive-canvas relative z-10 flex flex-col justify-between overflow-hidden ${className}`}
+        className={`responsive-canvas @container relative z-10 flex flex-col justify-between overflow-hidden ${className}`}
       >
         {children}
       </div>

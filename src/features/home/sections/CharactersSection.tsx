@@ -1,5 +1,6 @@
 import { SectionWrapper } from "../components/SectionWrapper";
 import { SECTIONS } from "@/constants/sections";
+import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export function CharactersSection() {
   return (
@@ -8,7 +9,7 @@ export function CharactersSection() {
       baseBg="bg-[#eeeeee]"
       className="bg-[#ab8326]"
     >
-      <h1>Characters Section</h1>
+      <SectionTitle sectionId={SECTIONS.CHARACTERS} />
     </SectionWrapper>
   );
 }

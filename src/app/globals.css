@@ -4,23 +4,14 @@
   Responsive Conditions
 ======================================== */
 
-@custom-media --aspect-mobile (max-aspect-ratio: 1 / 1);
-
-@custom-variant aspect-mobile {
-  @media (--aspect-mobile) {
-    @slot;
-  }
-}
+@custom-variant aspect-mobile (@media (max-aspect-ratio: 1 / 1));
 
 /* ========================================
   Theme
 ======================================== */
 
 @theme {
-  /* ========================================
-    Colors
-  ======================================== */
-
+  /* Colors */
   --color-brand-main: #e63946;
   --color-brand-secondary: #457b9d;
   --color-brand-gold: #ffd700;
@@ -30,18 +21,12 @@
   --color-text-primary: #f0f6fc;
   --color-text-muted: #8b949e;
 
-  /* ========================================
-    Fonts
-  ======================================== */
-
+  /* Fonts */
   --font-game: var(--font-geist-sans);
   --font-body: var(--font-geist-sans);
 
-  /* ========================================
-    Typography
-  ======================================== */
-
-  --text-title-xl: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+  /* Typography (Font Sizes) */
+  --text-title-xl: clamp(2.5rem, 25vw + 1rem, 21.5rem);
   --text-title-xl--line-height: 1.1;
   --text-title-xl--letter-spacing: 0.05em;
 
@@ -64,12 +49,10 @@
     aspect-ratio: 16 / 9;
   }
 
-  @media (--aspect-mobile) {
+  @media (max-aspect-ratio: 1 / 1) {
     .responsive-canvas {
-      /* width: min(calc(100vw), 56.25dvh); */
       aspect-ratio: 1 / 1;
       width: min(100dvh, calc(100vw * 16 / 9));
-      /* 画面幅（100vw）への強制収縮を防ぎ、高さを 100dvh に維持する必須プロパティ */
       max-width: none;
       flex-shrink: 0;
     }
