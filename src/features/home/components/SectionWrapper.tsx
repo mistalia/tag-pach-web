@@ -39,9 +39,11 @@ export function SectionWrapper({
       {background && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-0"
+          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
         >
-          {background}
+          <div className="responsive-canvas relative shrink-0 overflow-hidden">
+            {background}
+          </div>
         </div>
       )}
 
