@@ -45,8 +45,9 @@
 
 @layer utilities {
   .responsive-canvas {
-    width: min(calc(100vw), 177.7778dvh);
+    width: 100vw;
     aspect-ratio: 16 / 9;
+    flex-shrink: 0;
   }
 
   @media (max-aspect-ratio: 1 / 1) {

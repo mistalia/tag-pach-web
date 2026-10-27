@@ -1,13 +1,17 @@
-import { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface SectionWrapperProps {
   children: ReactNode;
-  /** スクロール移動用の要素ID（例: "hero", "characters"） */
+  /** スクロール移動用の要素ID */
   id: string;
-  /** セクションごとの背景色や追加スタイル */
+  /** セクション固有の追加スタイル */
   className?: string;
-  /** 調整用の最背面の背景 */
+  /** 最背面の背景 */
   baseBg?: string;
+  /** セクションの最低高さ */
+  minHeight?: string;
+  /** 背景コンポーネント（画像・動画・エフェクトなど） */
+  background?: ReactNode;
 }
 
 export function SectionWrapper({
@@ -15,16 +19,33 @@ export function SectionWrapper({
   id,
   className = "",
   baseBg = "bg-brand-white",
+  minHeight,
+  background,
 }: SectionWrapperProps) {
+  const style: CSSProperties = {
+    minHeight,
+  };
+
   return (
     <section
       id={id}
-      className="relative w-full overflow-hidden flex items-center justify-center"
+      style={style}
+      className="relative flex w-full items-center justify-center overflow-hidden"
     >
-      {/* 【Layer 0】セクションの背景色 */}
-      <div className={`absolute inset-0 z-0 ${baseBg}`} />
+      {/* Layer 0: セクション背景色 */}
+      <div aria-hidden="true" className={`absolute inset-0 z-0 ${baseBg}`} />
 
-      {/* 【Layer 1】16:9 アスペクト比固定キャンバス */}
+      {/* Layer 1: カスタム背景 */}
+      {background && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0"
+        >
+          {background}
+        </div>
+      )}
+
+      {/* Layer 2: セクションコンテンツ */}
       <div
         className={`responsive-canvas @container relative z-10 flex flex-col justify-between overflow-hidden ${className}`}
       >
