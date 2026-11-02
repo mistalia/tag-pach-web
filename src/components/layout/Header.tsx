@@ -23,7 +23,7 @@ export function Header() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="font-body text-sm tracking-wide text-text-primary transition-colors hover:text-brand-gold"
+              className="font-game text-sm tracking-wide text-text-primary transition-colors hover:text-brand-gold"
             >
               {item.label}
             </a>
