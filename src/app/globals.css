@@ -4,6 +4,7 @@
   Responsive Conditions
 ======================================== */
 
+@custom-variant aspect-desktop (@media (min-aspect-ratio: 1001 / 1000));
 @custom-variant aspect-mobile (@media (max-aspect-ratio: 1 / 1));
 
 /* ========================================
@@ -56,6 +57,24 @@
       width: min(100dvh, calc(100vw * 16 / 9));
       max-width: none;
       flex-shrink: 0;
+    }
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-aspect-ratio: 1 / 1) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: block;
     }
   }
 }
