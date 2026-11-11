@@ -1,4 +1,4 @@
-import { CharactersSection } from "../sections/CharactersSection";
+import { CharactersSection } from "../sections/characters/CharactersSection";
 import { GameSection } from "../sections/GameSection";
 import { GuideSection } from "../sections/GuideSection";
 import { HeroSection } from "../sections/HeroSection";
