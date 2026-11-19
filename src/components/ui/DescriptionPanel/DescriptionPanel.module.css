@@ -1,0 +1,76 @@
+/* ========================================
+  Futuristic Description Panel
+======================================== */
+
+.panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 0.75rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(8, 27, 49, 0.38),
+    rgba(10, 38, 66, 0.32) 55%,
+    rgba(5, 20, 39, 0.22)
+  );
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.1),
+    inset 0 0 20px rgba(56, 189, 248, 0.04);
+}
+
+/* Top highlight */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.2) 10%,
+    rgba(125, 211, 252, 0.95) 50%,
+    rgba(56, 189, 248, 0.2) 90%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+/* HUD corner accents */
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(#67e8f9, #67e8f9) top left / 18px 2px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) top left / 2px 18px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) top right / 18px 2px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) top right / 2px 18px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) bottom left / 18px 2px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) bottom left / 2px 18px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) bottom right / 18px 2px no-repeat,
+    linear-gradient(#67e8f9, #67e8f9) bottom right / 2px 18px no-repeat;
+
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Panel text */
+.panel h3 {
+  color: #f0f9ff;
+  text-shadow: 0 0 8px rgba(125, 211, 252, 0.2);
+}
+
+.panel p {
+  color: rgba(226, 240, 255, 0.92);
+}
