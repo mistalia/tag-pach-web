@@ -1,6 +1,6 @@
-import { DescriptionPanel } from "@/components/ui/DescriptionPanel";
-import { CharacterViewer } from "../../components/characters/CharacterViewer";
+import { DescriptionPanel } from "@/components/ui/DescriptionPanel/DescriptionPanel";
 import { CharacterDisplaySwitcher } from "../../components/characters/CharacterDisplaySwitcher";
+import { CharacterViewer } from "../../components/characters/CharacterViewer";
 
 type DisplayMode = "2d" | "3d";
 
